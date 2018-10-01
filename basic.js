@@ -55,10 +55,21 @@ for (let year = 2014; year <= 2050; year++){
     }
 }
 
-// 8. Write a JavaScript program where the program takes a random integer between 1 to 10, the user is then prompted to input a guess number. If the user input matches with guess number, the program will display a message "Good Work" otherwise display a message "Not matched"
-
+// 8. Write a JavaScript program where the program takes a random integer between 1 to 10, the user is then prompted to input a guess number. 
+//If the user input matches with guess number, the program will display a message "Good Work" otherwise display a message "Not matched"
+let randomInteger = Math.ceil(Math.random() * 10);
+let askUser = prompt('What do you think the number is? Guess a random number between 1 to 10')
+if (askUser === randomInteger){
+    alert("Good Work");
+} else {
+    alert( "Not matched");
+}
 
 // 9. Write a JavaScript program to calculate days left until next Christmas
+let getCurrentDate = moment().format();
+let christmas = moment('2018-12-25').format();
+let daysLeft = moment(christmas).diff((getCurrentDate), 'days');
+console.log(`${daysLeft} until Christmas!`);
 
 // 10. Write a JavaScript program to calculate multiplication and division of two numbers (input from user)
 // Sample form : sample form
@@ -72,10 +83,14 @@ for (let year = 2014; year <= 2050; year++){
 
 
 // 12. Write a JavaScript program to get the website URL (loading page)
+alert(document.URL);
 
 // 13. Write a JavaScript exercise to create a variable using a user-defined name
 
 // 14. Write a JavaScript exercise to get the extension of a filename
+let filename = "stylesheet.css";
+let extension = filename.split('.').pop();
+console.log('extension', extension);
 
 // 15. Write a JavaScript program to get the difference between a given number and 13, if the number is greater than 13 return double the absolute difference
 
