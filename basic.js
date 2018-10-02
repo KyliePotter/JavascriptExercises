@@ -4,10 +4,10 @@ let moment = require('moment');
 //Sample Output : Today is : Tuesday. 
 //Current time is : 10 PM : 30 : 38
 
-let day = moment().format('dddd');
+const day = moment().format('dddd');
 console.log(`Sample Output : Today is : ${day}`);
-let currentHour = moment().format('HH');
-let currentMinsSec = moment().format(': MM : SS');
+const currentHour = moment().format('HH');
+const currentMinsSec = moment().format(': MM : SS');
 console.log(`Current time is : ${currentHour} PM ${currentMinsSec}`);
 
 // 2. Write a JavaScript program to print the contents of the current window
@@ -15,17 +15,17 @@ window.print();
 
 // 3. Write a JavaScript program to get the current date  
 // Expected Output : mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy
-let dateFormat1 = moment().format('MM-DD-YYYY');
-let dateFormat2 = moment().format('MM/DD/YYYY');
-let dateFormat3 = moment().format('DD-MM-YYYY');
-let dateFormat4 = moment().format('DD/MM/YYYY');
+const dateFormat1 = moment().format('MM-DD-YYYY');
+const dateFormat2 = moment().format('MM/DD/YYYY');
+const dateFormat3 = moment().format('DD-MM-YYYY');
+const dateFormat4 = moment().format('DD/MM/YYYY');
 
 // 4. Write a JavaScript program to find the area of a triangle where lengths of the three of its sides are 5, 6, 7
-let side1 = 5;
-let side2 = 6;
-let side3 = 7;
-let total = (side1 + side2 + side3)/2;
-let triangleArea = Math.sqrt(total * ((total-side1)*(total-side2)*(total-side3)));
+const side1 = 5;
+const side2 = 6;
+const side3 = 7;
+const total = (side1 + side2 + side3)/2;
+const triangleArea = Math.sqrt(total * ((total-side1)*(total-side2)*(total-side3)));
 console.log(triangleArea);
 
 // 5. Write a JavaScript program to rotate the string 'w3resource' in right direction by periodically removing one letter from the end of the string and attaching it to the front
@@ -42,7 +42,7 @@ function changeString() {
 }
 
 // 6. Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar
-let getYear = moment().format('YYYY');
+const getYear = moment().format('YYYY');
 let determineLeapYear = (getYear % 100 === 0) ? (getYear % 4 === 0) : (getYear % 400 === 0);
 console.log(determineLeapYear);
 
@@ -66,9 +66,9 @@ if (askUser === randomInteger){
 }
 
 // 9. Write a JavaScript program to calculate days left until next Christmas
-let getCurrentDate = moment().format();
-let christmas = moment('2018-12-25').format();
-let daysLeft = moment(christmas).diff((getCurrentDate), 'days');
+const getCurrentDate = moment().format();
+const christmas = moment('2018-12-25').format();
+const daysLeft = moment(christmas).diff((getCurrentDate), 'days');
 console.log(`${daysLeft} until Christmas!`);
 
 // 10. Write a JavaScript program to calculate multiplication and division of two numbers (input from user)
@@ -79,28 +79,75 @@ console.log(`${daysLeft} until Christmas!`);
 // [ Formula : c/5 = (f-32)/9 [ where c = temperature in Celsius and f = temperature in Fahrenheit ] 
 // Expected Output : 
 // 60°C is 140 °F
-// 45°F is 7.222222222222222°C 
+// 45°F is 7.222222222222222°C
 
+function convertTemperatures(celsiusValue, fahrenheitValue){
+    const celsiusTofahrenheit = (celsiusValue * (9 / 5) + 32);
+    console.log (`${celsiusValue}°C is ${celsiusTofahrenheit}°F `);
+    const fahrenheitToCelsius = (fahrenheitValue - 32) * (5 / 9);
+    console.log (`${fahrenheitValue}°F is ${fahrenheitToCelsius}°C `);
+}
+convertTemperatures(60, 45);
 
 // 12. Write a JavaScript program to get the website URL (loading page)
 alert(document.URL);
 
 // 13. Write a JavaScript exercise to create a variable using a user-defined name
+const var_name = 'aUserDefinedName';
+const name = 'Emma';
+this[var_name] = name;
+console.log('this', this[var_name]);
 
 // 14. Write a JavaScript exercise to get the extension of a filename
-let filename = "stylesheet.css";
-let extension = filename.split('.').pop();
-console.log('extension', extension);
+const fileName = 'stylesheet.css';
+const extension = fileName.split('.').pop();
+console.log(extension);
 
 // 15. Write a JavaScript program to get the difference between a given number and 13, if the number is greater than 13 return double the absolute difference
+function findDifference(givenNumber){
+    if (Math.abs(givenNumber,13) > 13) {
+        console.log(Math.abs(givenNumber,9) * 2)
+    } else {
+        console.log(Math.abs(givenNumber,13));
+    }
+}
 
+findDifference(2);
 
 // 16. Write a JavaScript program to compute the sum of the two given integers. If the two values are same, then returns triple their sum
+function compute(integer1, integer2){
+    if (integer1 === integer2){
+        console.log((integer1 + integer2) * 3)
+    } else {
+        console.log(integer1 + integer2);
+    }
+}
 
+compute(98, 98);
 
-// 17. Write a JavaScript program to compute the absolute difference between a specified number and 19. Returns triple their absolute difference if the specified number is greater than 19
+// 17. Write a JavaScript program to compute the absolute difference between a specified number and 19. 
+//Returns triple their absolute difference if the specified number is greater than 19.
+function absoluteDifference(specifiedNumber){
+    if (Math.abs(specifiedNumber, 19) > 19){
+        console.log(Math.abs(specifiedNumber, 19) * 3);
+    } else {
+        console.log(Math.abs(specifiedNumber, 19));
+    }
+}
+
+absoluteDifference(46)
 
 // 18. Write a JavaScript program to check two given numbers and return true if one of the number is 50 or if their sum is 50
+function checkNumbers(number1, number2){
+const sumOfNumbers = number1 + number2;
+    if ((number1 === 50) || (number2 === 50) || sumOfNumbers === 50){
+        return true;
+    } else {
+        return false
+    }
+}
+
+checkNumbers(50, 17);
 
 // 19. Write a JavaScript program to check a given integer is within 20 of 100 or 400
 
@@ -489,7 +536,6 @@ console.log('extension', extension);
 
 // 143. Write a JavaScript program to sort the strings of a given array of strings in the order of increasing lengths  
 //Note: Do not change the order if the lengths of two string are same
-
 
 // 144. Write a JavaScript program to break an address of an url and put it's part into an array.   
 // Note: url structure : ://.org[/] and there may be no part in the address
