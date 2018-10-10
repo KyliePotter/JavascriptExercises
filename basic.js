@@ -90,7 +90,7 @@ function convertTemperatures(celsiusValue, fahrenheitValue){
 convertTemperatures(60, 45);
 
 // 12. Write a JavaScript program to get the website URL (loading page)
-alert(document.URL);
+//alert(document.URL);
 
 // 13. Write a JavaScript exercise to create a variable using a user-defined name
 const var_name = 'aUserDefinedName';
@@ -150,14 +150,59 @@ const sumOfNumbers = number1 + number2;
 checkNumbers(50, 17);
 
 // 19. Write a JavaScript program to check a given integer is within 20 of 100 or 400
+function checkInteger(b){
+    let checked = Number.isInteger(b);
+    
+    if(checked){
+        if ((b + 20 === 100) && (b + 20 === 400)){
+            return true;
+        } else if ((b - 20 === 100) && (b - 20 === 400)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+checkInteger(39);
 
 // 20. Write a JavaScript program to check from two given integers, if one is positive and one is negative
+function checkPosNegIntegers(number){
+ if (number){
+     const checkInteger = Math.sign(number);
+     console.log('checkInteger',checkInteger);
+ }
+}
 
-// 21. Write a JavaScript program to create a new string adding "Py" in front of a given string. If the given string begins with "Py" then return the original string
+checkPosNegIntegers(245);
+checkPosNegIntegers( -98);
+
+// 21. Write a JavaScript program to create a new string adding "Py" in front of a given string. 
+//If the given string begins with "Py" then return the original string
+
+function createNewString(value){
+    if (value.substring(0,2) === 'py'){
+        console.log(value);
+    } else {
+        console.log('py' + value);
+    }
+}
+
+createNewString('python');
+createNewString('lala');
+createNewString('pl');
+createNewString('pboo');
 
 // 22. Write a JavaScript program to remove a character at the specified position of a given string and return the new string
+function removeCharacter(phrase, position){
+    let character = phrase.substring(0, position);
+    return character;
+}
 
-// 23. Write a JavaScript program to create a new string from a given string changing the position of first and last characters. The string length must be greater than or equal to 1.   
+console.log(removeCharacter('Hello World', 5));
+
+// 23. Write a JavaScript program to create a new string from a given string changing the position of first and last characters. 
+//The string length must be greater than or equal to 1.   
  
 
 // 24. Write a JavaScript program to create a new string from a given string with the first character of the given string added at the front and back.   
@@ -166,16 +211,19 @@ checkNumbers(50, 17);
 // 25. Write a JavaScript program check if a given positive number is a multiple of 3 or a multiple of 7.   
  
 
-// 26. Write a JavaScript program to create a new string from a given string taking the last 3 characters and added at both the front and back. The string length must be 3 or more.   
+// 26. Write a JavaScript program to create a new string from a given string taking the last 3 characters and added at both the front and back. 
+//The string length must be 3 or more.   
  
 
 // 27. Write a JavaScript program to check if a string starts with 'Java' and false otherwise.   
  
 
-// 28. Write a JavaScript program to check if two given integer values are in the range 50..99 (inclusive). Return true if either of them are in the said range.   
+// 28. Write a JavaScript program to check if two given integer values are in the range 50..99 (inclusive). 
+//Return true if either of them are in the said range.   
  
 
-// 29. Write a JavaScript program to check if three given integer values are in the range 50..99 (inclusive). Return true if one or more of them are in the said range.   
+// 29. Write a JavaScript program to check if three given integer values are in the range 50..99 (inclusive). 
+//Return true if one or more of them are in the said range.   
  
 
 // 30. Write a JavaScript program to check if a string "Script" presents at 5th (index 4) position in a given string, if "Script" presents in the string return the string without "Script" otherwise return the original one.   
