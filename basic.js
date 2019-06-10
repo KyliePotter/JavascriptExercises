@@ -11,7 +11,7 @@ const currentMinsSec = moment().format(': MM : SS');
 console.log(`Current time is : ${currentHour} PM ${currentMinsSec}`);
 
 // 2. Write a JavaScript program to print the contents of the current window
-window.print();
+//window.print();
 
 // 3. Write a JavaScript program to get the current date  
 // Expected Output : mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy
@@ -57,13 +57,13 @@ for (let year = 2014; year <= 2050; year++){
 
 // 8. Write a JavaScript program where the program takes a random integer between 1 to 10, the user is then prompted to input a guess number. 
 //If the user input matches with guess number, the program will display a message "Good Work" otherwise display a message "Not matched"
-let randomInteger = Math.ceil(Math.random() * 10);
-let askUser = prompt('What do you think the number is? Guess a random number between 1 to 10')
-if (askUser === randomInteger){
-    alert("Good Work");
-} else {
-    alert( "Not matched");
-}
+// let randomInteger = Math.ceil(Math.random() * 10);
+// let askUser = prompt('What do you think the number is? Guess a random number between 1 to 10')
+// if (askUser === randomInteger){
+//     alert("Good Work");
+// } else {
+//     alert( "Not matched");
+// }
 
 // 9. Write a JavaScript program to calculate days left until next Christmas
 const getCurrentDate = moment().format();
@@ -215,7 +215,18 @@ console.log(removeCharacter('Hello World', 5));
 //The string length must be 3 or more.   
  
 
-// 27. Write a JavaScript program to check if a string starts with 'Java' and false otherwise.   
+// 27. Write a JavaScript program to check if a string starts with 'Java' and false otherwise.
+function findJava(value){
+    if (value.indexOf('Java') > -1){
+        return true;
+    } else {
+        return false;
+    }
+} 
+
+console.log('findJava', findJava('javascript'));
+console.log('findJava', findJava('Javascript'));
+console.log('findJava', findJava('Lets learn Java'));
  
 
 // 28. Write a JavaScript program to check if two given integer values are in the range 50..99 (inclusive). 
